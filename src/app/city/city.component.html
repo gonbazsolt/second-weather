@@ -1,0 +1,74 @@
+<div class="screen">
+  <div class="container">
+    <div class="top">
+      <div class="city">
+        <h1>
+          {{ forecast.city }}
+        </h1>
+      </div>
+      <div class="prev_city">
+        <a href="#" (click)="prevCity()">
+          <div class="sides">
+            <img class="button" src="../../assets/arrow-up.png">
+          </div>
+          <div class="middle">
+            <h1>
+              Previous
+            </h1>
+          </div>
+          <div class="sides">
+            <img class="button" src="../../assets/arrow-up.png">
+          </div>
+        </a>
+      </div>
+      <div class="home">
+        <h1>
+          <a href="#" (click)="clickToHome()">
+            Home
+          </a>
+        </h1>
+      </div>
+    </div>
+    <div class="days">
+
+        <section
+          *ngFor="let oneWeather of forecast.weather">
+          <div class="icon">
+            <img src="../../assets/{{ oneWeather.icon }}.png" alt="icon">
+          </div>
+          <div class="temp">
+            <p>
+              {{ oneWeather.temp }} &#176;C
+            </p>
+          </div>
+          <div class="message">
+            <h4>
+              {{ oneWeather.message }}
+            </h4>
+          </div>
+        </section>
+        
+    </div>
+    <div class="bottom">
+      <div class="empty"></div>
+      <div class="next_city">
+        <a href="#" (click)="nextCity()">
+          <div class="sides">
+            <img class="button" src="../../assets/arrow-down.png">
+          </div>
+          <div class="middle">
+            <h1>
+              Next
+            </h1>
+          </div>
+          <div class="sides">
+            <img class="button" src="../../assets/arrow-down.png">
+          </div>
+        </a>
+      </div>
+      <div class="empty"></div>
+    </div>
+
+
+  </div>
+</div>

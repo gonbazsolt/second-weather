@@ -1,0 +1,28 @@
+<div class="screen">
+  <div class="container">
+
+      <a href="#" 
+      *ngFor="let forecast of forecasts; let i = index"
+      (click)="clickToCity(i)">
+        <section>
+          <div class="location">
+            <h1 class="city">
+              {{ forecast.city }}
+            </h1>
+            <h4 class="state">
+              {{ forecast.location }}
+            </h4>
+          </div>
+          <div class="temp">
+            <p>
+              {{ forecast.weather[0].temp }} &#176;C
+            </p>
+          </div>
+          <div class="icon">
+            <img src="../../assets/{{ forecast.weather[0].icon }}.png" alt="icon">
+          </div>
+        </section>
+      </a>
+
+  </div>
+</div>
